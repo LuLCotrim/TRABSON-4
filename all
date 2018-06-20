@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+#define true 1
+#define false 0
+#define TAM 1
+
+struct livroExatas {
+    int codigo;
+    char nome[20];
+    char autor[20];
+    char editora[20];
+    int numPaginas;
+    int doado;
+}exatas;
+
+struct livroHumanas {
+    int codigo;
+    char nome[20];
+    char autor[20];
+    char editora[20];
+    int numPaginas;
+    int doado;
+}humanas;
+
+struct livroBiomedicas {
+    int codigo;
+    char nome[20];
+    char autor[20];
+    char editora[20];
+    int numPaginas;
+    int doado;
+}biomedicas;
+
+void main(void) {
+    struct
+    int qntd, i;
+    
+    printf("Digite quantos livros de exatas voce gostaria de cadastrar:\n");
+    scanf("%d", &qntd);
+    for (i=0;i<qntd;i++) {
+        printf("Digite o codigo do livro:\n");
+        fgets(exatas[i].)
+    }
+
+}
