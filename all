@@ -4,42 +4,159 @@
 #define false 0
 #define TAM 1
 
-struct livroExatas {
+typedef struct {
     int codigo;
     char nome[20];
     char autor[20];
     char editora[20];
     int numPaginas;
     int doado;
-}exatas;
+}livroExatas;
 
-struct livroHumanas {
+typedef struct {
     int codigo;
     char nome[20];
     char autor[20];
     char editora[20];
     int numPaginas;
     int doado;
-}humanas;
+}livroHumanas;
 
-struct livroBiomedicas {
+typedef struct {
     int codigo;
-    char nome[20];
+    char nome[25];
     char autor[20];
     char editora[20];
     int numPaginas;
     int doado;
-}biomedicas;
+}livroBiomedicas;
 
 void main(void) {
-    struct
-    int qntd, i;
-    
-    printf("Digite quantos livros de exatas voce gostaria de cadastrar:\n");
-    scanf("%d", &qntd);
-    for (i=0;i<qntd;i++) {
-        printf("Digite o codigo do livro:\n");
-        fgets(exatas[i].)
+    livroExatas exatas[500];
+    livroHumanas humanas[500];
+    livroBiomedicas biomedicas[500];
+    int qntd, i, check = false, eDoado;
+
+    while (check == false) {
+        printf("Digite quantos livros de exatas voce gostaria de cadastrar:\n");
+        scanf("%d", &qntd);
+        if(qntd<=500) {
+            for (i=0;i<qntd;i++) {
+                printf("=======Livro %d======\n", i+1);
+                printf("Digite o codigo do livro:\n");
+                scanf("%d", &exatas[i].codigo);
+                fflush(stdin);
+
+                printf("Digite o nome do livro:\n");
+                fgets(exatas[i].nome,23,stdin);
+                fflush(stdin);
+
+                printf("Digite o autor do livro:\n");
+                fgets(exatas[i].autor,18,stdin);
+                fflush(stdin);
+
+                printf("Digite a editora do livro:\n");
+                fgets(exatas[i].editora,18,stdin);
+                fflush(stdin);
+
+                printf("Digite o numero de paginas do livro:\n");
+                scanf("%d", &exatas[i].numPaginas);
+                fflush(stdin);
+
+                printf("Digite se o livro foi doado(1 pra sim ou 0 pra nao):\n");
+                scanf("%d", &eDoado);
+                if (eDoado == 1) {
+                    exatas[i].doado = true;
+                } else {
+                    exatas[i].doado = false;
+                }
+            }
+            check = true;
+        } else {
+            printf("Por favor digite um numero ate 500\n");
+            check = false;
+        }
     }
 
+    while (check == false) {
+        printf("Digite quantos livros de humanas voce gostaria de cadastrar:\n");
+        scanf("%d", &qntd);
+        if(qntd<=500) {
+            for (i=0;i<qntd;i++) {
+                printf("=======Livro %d======\n", i+1);
+                printf("Digite o codigo do livro:\n");
+                scanf("%d", &humanas[i].codigo);
+                fflush(stdin);
+
+                printf("Digite o nome do livro:\n");
+                fgets(humanas[i].nome,23,stdin);
+                fflush(stdin);
+
+                printf("Digite o autor do livro:\n");
+                fgets(humanas[i].autor,18,stdin);
+                fflush(stdin);
+
+                printf("Digite a editora do livro:\n");
+                fgets(humanas[i].editora,18,stdin);
+                fflush(stdin);
+
+                printf("Digite o numero de paginas do livro:\n");
+                scanf("%d", &humanas[i].numPaginas);
+                fflush(stdin);
+
+                printf("Digite se o livro foi doado(1 pra sim ou 0 pra nao):\n");
+                scanf("%d", &eDoado);
+                if (eDoado == 1) {
+                    humanas[i].doado = true;
+                } else {
+                    humanas[i].doado = false;
+                }
+            }
+            check = true;
+        } else {
+            printf("Por favor digite um numero ate 500\n");
+            check = false;
+        }
+    }
+
+    while (check == false) {
+        printf("Digite quantos livros de biomedicas voce gostaria de cadastrar:\n");
+        scanf("%d", &qntd);
+        if(qntd<=500) {
+            for (i=0;i<qntd;i++) {
+                printf("=======Livro %d======\n", i+1);
+                printf("Digite o codigo do livro:\n");
+                scanf("%d", &biomedicas[i].codigo);
+                fflush(stdin);
+
+                printf("Digite o nome do livro:\n");
+                fgets(biomedicas[i].nome,23,stdin);
+                fflush(stdin);
+
+                printf("Digite o autor do livro:\n");
+                fgets(biomedicas[i].autor,18,stdin);
+                fflush(stdin);
+
+                printf("Digite a editora do livro:\n");
+                fgets(biomedicas[i].editora,18,stdin);
+                fflush(stdin);
+
+                printf("Digite o numero de paginas do livro:\n");
+                scanf("%d", &biomedicas[i].numPaginas);
+                fflush(stdin);
+
+                printf("Digite se o livro foi doado(1 pra sim ou 0 pra nao):\n");
+                scanf("%d", &eDoado);
+                if (eDoado == 1) {
+                    biomedicas[i].doado = true;
+                } else {
+                    biomedicas[i].doado = false;
+                }
+            }
+            check = true;
+        } else {
+            printf("Por favor digite um numero ate 500\n");
+            check = false;
+        }
+    }
 }
