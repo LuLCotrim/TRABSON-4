@@ -3,6 +3,9 @@
 #define true 1
 #define false 0
 #define TAM 1
+#define areaExatas "exatas"
+#define areaHumanas "humanas"
+#define areaBiomedicas "biomedicas"
 
 typedef struct {
     int codigo;
@@ -31,17 +34,34 @@ typedef struct {
     int doado;
 }livroBiomedicas;
 
+int qntdExatas, qntdHumanas, qntdBiomedicas;
+
+void pesquisar(int codigo, char area[]) {
+    if (area == areaExatas) {
+        printf("ata");
+        //for (i=0,i<qntdExatas)
+    }
+    if (area == areaHumanas) {
+
+    }
+    if (area == areaBiomedicas) {
+
+    }
+
+}
+
+
 void main(void) {
     livroExatas exatas[500];
     livroHumanas humanas[500];
     livroBiomedicas biomedicas[500];
-    int qntd, i, check = false, eDoado;
+    int i, check = false, eDoado;
 
     while (check == false) {
         printf("Digite quantos livros de exatas voce gostaria de cadastrar:\n");
-        scanf("%d", &qntd);
-        if(qntd<=500) {
-            for (i=0;i<qntd;i++) {
+        scanf("%d", &qntdExatas);
+        if(qntdExatas<=500) {
+            for (i=0;i<qntdExatas;i++) {
                 printf("=======Livro %d======\n", i+1);
                 printf("Digite o codigo do livro:\n");
                 scanf("%d", &exatas[i].codigo);
@@ -78,11 +98,12 @@ void main(void) {
         }
     }
 
+    check = false;
     while (check == false) {
         printf("Digite quantos livros de humanas voce gostaria de cadastrar:\n");
-        scanf("%d", &qntd);
-        if(qntd<=500) {
-            for (i=0;i<qntd;i++) {
+        scanf("%d", &qntdHumanas);
+        if(qntdHumanas<=500) {
+            for (i=0;i<qntdHumanas;i++) {
                 printf("=======Livro %d======\n", i+1);
                 printf("Digite o codigo do livro:\n");
                 scanf("%d", &humanas[i].codigo);
@@ -119,11 +140,12 @@ void main(void) {
         }
     }
 
+    check = false;
     while (check == false) {
         printf("Digite quantos livros de biomedicas voce gostaria de cadastrar:\n");
-        scanf("%d", &qntd);
-        if(qntd<=500) {
-            for (i=0;i<qntd;i++) {
+        scanf("%d", &qntdBiomedicas);
+        if(qntdBiomedicas<=500) {
+            for (i=0;i<qntdBiomedicas;i++) {
                 printf("=======Livro %d======\n", i+1);
                 printf("Digite o codigo do livro:\n");
                 scanf("%d", &biomedicas[i].codigo);
@@ -159,4 +181,7 @@ void main(void) {
             check = false;
         }
     }
+    int ata=2;
+    char ate[]="exatas";
+    pesquisar(ata,ate);
 }
