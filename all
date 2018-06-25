@@ -36,25 +36,59 @@ typedef struct {
 
 int qntdExatas, qntdHumanas, qntdBiomedicas;
 
+livroExatas exatas[500];
+livroHumanas humanas[500];
+livroBiomedicas biomedicas[500];
+
 void pesquisar(int codigo, char area[]) {
+    int i, check;
+
     if (area == areaExatas) {
-        printf("ata");
-        //for (i=0,i<qntdExatas)
+        for (i=0;i<qntdExatas;i++) {
+            if (codigo == exatas[i].codigo) {
+                printf("Essa obra existe!");
+                check = 1;
+            } else if (check != 1) {
+                check = 0;
+            }
+        }
+        if (check == 0) {
+            printf("Essa obra não existe");
+        }
     }
+
     if (area == areaHumanas) {
-
+         for (i=0;i<qntdHumanas;i++) {
+            if (codigo == humanas[i].codigo) {
+                printf("Essa obra existe!");
+                check = 1;
+            } else if (check != 1) {
+                check = 0;
+            }
+        }
+        if (check == 0) {
+            printf("Essa obra não existe");
+        }
     }
-    if (area == areaBiomedicas) {
 
+    if (area == areaBiomedicas) {
+        for (i=0;i<qntdBiomedicas;i++) {
+            if (codigo == biomedicas[i].codigo) {
+                printf("Essa obra existe!");
+                check = 1;
+            } else if (check != 1) {
+                check = 0;
+            }
+        }
+        if (check == 0) {
+            printf("Essa obra não existe");
+        }
     }
 
 }
 
 
 void main(void) {
-    livroExatas exatas[500];
-    livroHumanas humanas[500];
-    livroBiomedicas biomedicas[500];
     int i, check = false, eDoado;
 
     while (check == false) {
@@ -181,7 +215,6 @@ void main(void) {
             check = false;
         }
     }
-    int ata=2;
-    char ate[]="exatas";
-    pesquisar(ata,ate);
+
+    pesquisar(1,exatas);
 }
