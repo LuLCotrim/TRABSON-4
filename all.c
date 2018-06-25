@@ -49,7 +49,8 @@ void pesquisar(int codigo, char area[]) {
             if (codigo == exatas[i].codigo) {
                 printf("Essa obra existe!");
                 check = 1;
-            } else if (check != 1) {
+            }
+            if ((i==qntdExatas-1) && (check != 1)){
                 check = 0;
             }
         }
@@ -221,9 +222,51 @@ void main(void) {
     printf("Digite respectivamente o codigo e a area (exatas, humanas ou biomedicas) do livro a ser pesquisado:\n");
     scanf("%d", &codigoPesquisar);
     fflush(stdin);
-
     fgets(areaPesquisar,8,stdin);
     fflush(stdin);
+    check = 2;
+    if (areaPesquisar == areaExatas) {
+        for (i=0;i<qntdExatas;i++) {
+            if (codigoPesquisar == exatas[i].codigo) {
+                printf("Essa obra existe!");
+                check = 1;
+            }
+            if ((i==qntdExatas-1) && (check != 1)){
+                check = 0;
+            }
+        }
+        if (check == 0) {
+            printf("Essa obra nao existe!");
+        }
+    }
 
-    pesquisar(codigoPesquisar,areaPesquisar);
+    if (areaPesquisar == areaHumanas) {
+        for (i=0;i<qntdHumanas;i++) {
+            if (codigoPesquisar == humanas[i].codigo) {
+                printf("Essa obra existe!");
+                check = 1;
+            }
+            if ((i==qntdHumanas-1) && (check != 1)){
+                check = 0;
+            }
+        }
+        if (check == 0) {
+            printf("Essa obra nao existe!");
+        }
+    }
+
+    if (areaPesquisar == areaBiomedicas) {
+        for (i=0;i<qntdBiomedicas;i++) {
+            if (codigoPesquisar == biomedicas[i].codigo) {
+                printf("Essa obra existe!");
+                check = 1;
+            }
+            if ((i==qntdBiomedicas-1) && (check != 1)){
+                check = 0;
+            }
+        }
+        if (check == 0) {
+            printf("Essa obra nao existe!");
+        }
+    }
 }
