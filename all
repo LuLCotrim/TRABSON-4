@@ -2,7 +2,6 @@
 #include <string.h>
 #define true 1
 #define false 0
-#define TAM 1
 #define areaExatas "exatas"
 #define areaHumanas "humanas"
 #define areaBiomedicas "biomedicas"
@@ -40,6 +39,8 @@ livroExatas exatas[500];
 livroHumanas humanas[500];
 livroBiomedicas biomedicas[500];
 
+char areaPesquisar[10];
+
 void pesquisar(int codigo, char area[]) {
     int i, check;
 
@@ -53,7 +54,7 @@ void pesquisar(int codigo, char area[]) {
             }
         }
         if (check == 0) {
-            printf("Essa obra não existe");
+            printf("Essa obra nao existe!");
         }
     }
 
@@ -67,7 +68,7 @@ void pesquisar(int codigo, char area[]) {
             }
         }
         if (check == 0) {
-            printf("Essa obra não existe");
+            printf("Essa obra não existe!");
         }
     }
 
@@ -81,7 +82,7 @@ void pesquisar(int codigo, char area[]) {
             }
         }
         if (check == 0) {
-            printf("Essa obra não existe");
+            printf("Essa obra não existe!");
         }
     }
 
@@ -89,7 +90,8 @@ void pesquisar(int codigo, char area[]) {
 
 
 void main(void) {
-    int i, check = false, eDoado;
+    int i, check = false, eDoado, codigoPesquisar;
+
 
     while (check == false) {
         printf("Digite quantos livros de exatas voce gostaria de cadastrar:\n");
@@ -216,5 +218,12 @@ void main(void) {
         }
     }
 
-    pesquisar(1,exatas);
+    printf("Digite respectivamente o codigo e a area (exatas, humanas ou biomedicas) do livro a ser pesquisado:\n");
+    scanf("%d", &codigoPesquisar);
+    fflush(stdin);
+
+    fgets(areaPesquisar,8,stdin);
+    fflush(stdin);
+
+    pesquisar(codigoPesquisar,areaPesquisar);
 }
